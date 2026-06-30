@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getSemanticSimilarity = async (parsedJD, parsedResume) => {
   try {
-    const response = await axios.post("http://127.0.0.1:8000/similarity", {
+    const response = await axios.post(`${process.env.AI_SERVICE}/similarity`, {
       parsedJD,
       parsedResume,
     });
