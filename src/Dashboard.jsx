@@ -38,7 +38,7 @@ const Dashboard = () => {
   const fetchDashboard = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/jobs/dashboard/${user.id}`,
+        `${import.meta.env.VITE_API_URL}/api/jobs/dashboard/${user.id}`,
       );
 
       const data = await response.json();
@@ -54,7 +54,7 @@ const Dashboard = () => {
   const updateStatus = async (jobId, status) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/jobs/${jobId}/status`,
+        `${import.meta.env.VITE_API_URL}/jobs/${jobId}/status`,
         {
           method: "PATCH",
 
@@ -82,7 +82,7 @@ const Dashboard = () => {
   const openLeaderboard = async (jobId) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/jobs/${jobId}/analyze`,
+        `${import.meta.env.VITE_API_URL}/jobs/${jobId}/analyze`,
         {
           method: "POST",
         },

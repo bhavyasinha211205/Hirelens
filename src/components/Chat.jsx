@@ -43,7 +43,7 @@ const Chat = ({
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/chat",
+        `${import.meta.env.VITE_API_URL}/api/chat`,
         {
           message: currentInput
         }

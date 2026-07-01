@@ -43,7 +43,7 @@ const Feature = ({ openChat }) => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/jobs/create",
+        `${import.meta.env.VITE_API_URL}/api/jobs/create`,
         {
           method: "POST",
           headers: {
@@ -54,7 +54,7 @@ const Feature = ({ openChat }) => {
             title: jobTitle,
             description: jobDescription,
           }),
-        }
+        },
       );
 
       const data = await response.json();
@@ -109,7 +109,7 @@ const Feature = ({ openChat }) => {
       setUploading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/resumes/upload",
+        `${import.meta.env.VITE_API_URL}/api/resumes/upload`,
         {
           method: "POST",
           body: formData,
@@ -137,10 +137,10 @@ const Feature = ({ openChat }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/resumes/${resumeId}`,
+        `${import.meta.env.VITE_API_URL}/api/resumes/${resumeId}`,
         {
           method: "DELETE",
-        }
+        },
       );
 
       const data = await response.json();
@@ -169,10 +169,10 @@ const Feature = ({ openChat }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/jobs/${jobId}/analyze`,
+        `${import.meta.env.VITE_API_URL}/api/jobs/${jobId}/analyze`,
         {
           method: "POST",
-        }
+        },
       );
 
       const data = await response.json();
