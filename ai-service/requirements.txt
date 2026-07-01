@@ -1,7 +1,6 @@
-flask
-spacy
-sentence-transformers
-torch
-scikit-learn
-numpy
-gunicorn
+flask==3.0.3
+gunicorn==23.0.0
+numpy==2.2.6
+scikit-learn==1.7.0
+sentence-transformers==5.0.0
+torch==2.7.1

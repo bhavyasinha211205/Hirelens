@@ -17,15 +17,9 @@ mongoose
 
 const app = express();
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-    "https://hirelens-1-tivv.onrender.com"
-    ],
-    credentials: true,
-  }),
-);
+aapp.use(cors());
+
+app.options("*", cors());
 app.use(express.json());
 
 app.use("/api/chat", chatRoutes);
